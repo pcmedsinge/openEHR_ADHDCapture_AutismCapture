@@ -1,0 +1,50 @@
+services:
+  db:
+    image: postgres:16
+    container_name: neuro_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      EHRBASE_USER_ADMIN: ehrbase
+      EHRBASE_PASSWORD_ADMIN: ehrbase
+      EHRBASE_USER: ehrbase_restricted
+      EHRBASE_PASSWORD: ehrbase_restricted
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - neuro_db_data:/var/lib/postgresql/data
+    ports:
+      - "5434:5432"
+
+  ehrbase:
+    image: ehrbase/ehrbase:2.11.0
+    container_name: neuro_ehrbase
+    depends_on:
+      - db
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/ehrbase
+      DB_USER_ADMIN: ehrbase
+      DB_PASS_ADMIN: ehrbase
+      DB_USER: ehrbase_restricted
+      DB_PASS: ehrbase_restricted
+      ADMIN_API_ACTIVE: 'true'
+      EHRBASE_AQL_EXPERIMENTAL_AQLONFOLDER_ENABLED: 'true'
+      WEB_CORS_ALLOWEDORIGINS: "*"
+      WEB_CORS_ALLOWEDORIGINPATTERNS: "*"
+      WEB_CORS_ALLOWEDMETHODS: "GET,PUT,DELETE,POST,OPTIONS"
+      WEB_CORS_ALLOWCREDENTIALS: "false"
+    ports:
+      - "8082:8080"
+
+volumes:
+  neuro_db_data:
+
+# =============================================================================
+# Module 3 — NeuroCapture (ADHDCapture + AutismCapture)
+# EHRbase:      http://localhost:8082/ehrbase/rest/status
+# Swagger UI:   http://localhost:8082/ehrbase/swagger-ui/index.html
+# Template API: http://localhost:8082/ehrbase/rest/openehr/v1/definition/template/adl1.4
+# EHR API:      http://localhost:8082/ehrbase/rest/openehr/v1/ehr
+# Composition:  http://localhost:8082/ehrbase/rest/openehr/v1/ehr/{ehr_id}/composition
+# NOTE: Stop Module 2 before starting this if ports conflict
+# Credentials:  ehrbase / ehrbase (admin)
+# =============================================================================
