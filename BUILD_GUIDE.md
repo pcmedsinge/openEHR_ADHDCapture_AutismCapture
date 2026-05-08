@@ -1,7 +1,6 @@
 # Archetype Designer — Step-by-Step Build Guide
 
-*Written during build session — 2026-05-07*
-*Use this to repeat or continue any archetype build in a new session*
+Step-by-step instructions for building all archetypes and templates in Better Archetype Designer (v1.25.6-A2). Use this to reproduce the full archetype set from scratch.
 
 ---
 
@@ -9,7 +8,7 @@
 
 ### Step A — Open Archetype Designer
 1. Go to tools.openehr.org/designer
-2. Log in with your account (paragmedsinge@gmail.com)
+2. Log in with your Archetype Designer account
 3. The Repositories screen appears listing all existing repositories
 
 ### Step B — Create the Module 3 repository

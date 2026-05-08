@@ -1,7 +1,6 @@
-# Archetype Design — Module 3 Custom Archetypes
+# Archetype Design — NeuroCapture Custom Archetypes
 
-*Written progressively during build session — 2026-05-07*
-*Document every custom archetype before opening Archetype Designer*
+Clinical design rationale, node structure, and data type decisions for all custom archetypes in the NeuroCapture Suite.
 
 ---
 
@@ -366,16 +365,6 @@ adhd_initial_assessment/asrs_v11_screener/part_a_positive_screen|value
 ```
 
 ---
-
-## Remaining Assessment-Specific CLUSTERs (to be built)
-
-### `openEHR-EHR-CLUSTER.asrs_v11_screener.v0`
-- 18 items × DV_ORDINAL (Never=0 / Rarely=1 / Sometimes=2 / Often=3 / Very Often=4)
-- Part A score (items 1–6) — DV_COUNT, range 0–24
-- Part B score (items 7–18) — DV_COUNT, range 0–48
-- Total score — DV_COUNT, range 0–72
-- Part A positive screen flag (≥4) — DV_BOOLEAN
-- **STATUS: Built ✓**
 
 ### Build Log — `diva_5_interview.v0`
 

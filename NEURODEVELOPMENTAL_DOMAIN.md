@@ -1,6 +1,6 @@
-# Neurodevelopmental Domain — Module 3 Context
+# Neurodevelopmental Domain — Clinical Reference
 
-*Written: 2026-05-07 — read before building anything*
+Clinical context, instrument reference, and NICE guideline summary for the NeuroCapture Suite.
 
 ---
 

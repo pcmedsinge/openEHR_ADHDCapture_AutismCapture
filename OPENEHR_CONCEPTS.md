@@ -1,6 +1,6 @@
-# openEHR Concepts — Module 3 Reference
+# openEHR Concepts — NeuroCapture Reference
 
-*Written: 2026-05-07 — covers concepts introduced or deepened in this module*
+Data type decisions, FLAT JSON patterns, AQL examples, and archetype design concepts used in the NeuroCapture Suite.
 
 ---
 
